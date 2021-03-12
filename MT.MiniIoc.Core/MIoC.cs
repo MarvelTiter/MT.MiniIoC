@@ -1,4 +1,5 @@
 ﻿using CommonServiceLocator;
+using MT.MiniIoc.Core;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace MT.MiniIoc.Core {
+namespace MT.MiniIoc {
 
     public partial class MIoC : IMIocContainter, IServiceLocator {
 
