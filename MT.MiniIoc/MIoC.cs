@@ -21,7 +21,6 @@ namespace MT.MiniIoc {
         private Dictionary<Type, Dictionary<string, object>> _cacheInstance = new Dictionary<Type, Dictionary<string, object>>();
         private Dictionary<Type, bool> _cacheType = new Dictionary<Type, bool>();
 
-
         private static MIoC _default;
         public static MIoC Default {
             get {
@@ -328,16 +327,16 @@ namespace MT.MiniIoc {
                 return first;
             }
             return constructorInfos[0];
-        }
-        private ConstructorInfo GetPreferredConstructorInfo(IEnumerable<ConstructorInfo> ctors) {
-            //ctors.Where(c => {
-            //    c.GetCustomAttribute(typeof)
-            //})
 
-            throw new Exception(string.Format(
-                        CultureInfo.InvariantCulture,
-                        "Cannot register: NotImplemented"));
+            ConstructorInfo GetPreferredConstructorInfo(IEnumerable<ConstructorInfo> ctors) {
+                throw new Exception(
+                    string.Format(
+              CultureInfo.InvariantCulture,
+              "Cannot register: NotImplemented"));
+            }
+
         }
+
         private void DoRegister<T>(Type classType, Func<T> factory, string key) {
             if (_factories.ContainsKey(classType)) {
                 if (_factories[classType].ContainsKey(key)) {
